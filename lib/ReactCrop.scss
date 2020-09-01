@@ -1,4 +1,5 @@
 @import '../node_modules/react-image-crop/lib/ReactCrop';
+$top: 20px;
 
 .crop-img-box {
   position: fixed;
@@ -8,13 +9,6 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.2);
   z-index: 10;
-  h1 {
-    font-size: 16px;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    margin-bottom: 5px;
-  }
   .wrap {
     text-align: center;
     position: relative;
@@ -25,37 +19,74 @@
     background: #f1f1f1;
     border-radius: 10px;
     overflow: hidden;
-    width: 1200px;
-    min-height: 700px;
-    max-height: 800px;
+    width: 70%;
+    height: 800px;
     overflow-y: auto;
     &::-webkit-scrollbar {
       width: 0;
     }
-    scrollbar-width: none; // 火狐
-    -ms-overflow-style: none; // ie
-    -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    scrollbar-width: none;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     @media screen and (min-width: 2200px) {
       width: 1600px;
       max-height: 1000px;
     }
   }
-  .footer-box {
-    > div {
+  .dbb-title {
+    p {
       display: inline-block;
-      vertical-align: bottom;
     }
+    .rotate {
+      color: #ee00ff;
+      font-size: 12px;
+      border: 1px dashed #40a9ff;
+      padding: 5px 10px;
+      margin: 0 10px;
+      transition: all 0.2s;
+      &:hover {
+        cursor: pointer;
+      }
+      &.left:hover {
+        transform: rotate(5deg);
+      }
+      &.right:hover {
+        transform: rotate(-5deg);
+      }
+    }
+  }
+  .dbb-left {
+    position: absolute;
+    left: $top;
+    top: 70px;
+    img {
+      max-height: 800px;
+    }
+  }
+  .dbb-right {
+    position: absolute;
+    right: $top;
+    bottom: $top;
+  }
+  h1 {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 5px;
+  }
 
+  .footer-box {
+    button {
+      line-height: 100%;
+      margin: 0;
+      padding: 0;
+      border: 1px solid transparent;
+      outline: none;
+    }
     .btn {
       margin-left: 20px;
       .dbb-ok,
       .dbb-cancel {
-        //消除button的默认样式
-        margin: 0;
-        padding: 0;
-        border: 1px solid transparent; //自定义边框
-        outline: none; //消除默认点击蓝色边框效果
         padding: 8px 14px;
         border-radius: 5px;
         color: #fff;

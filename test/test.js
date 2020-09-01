@@ -2,17 +2,17 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom'; // eslint-disable-line
 import ReactCrop from '../lib/ReactCrop';
-import '../dist/ReactCrop.css';
+//import '../dist/ReactCrop.css';
 
 const cropEditor = document.querySelector('#crop-editor');
 
 const blockSize = {
-  width: 222,
-  height: 296,
+  width: 460,
+  height: 590,
 };
 const cropSize = {
-  width: 111,
-  height: 148,
+  width: 460,
+  height: 590,
 };
 
 class App extends Component {
@@ -41,6 +41,9 @@ class App extends Component {
               //locked={true}
               //ruleOfThirds={true}
               file={src}
+              wrapStyle={{
+                width:'1400px'
+              }}
               blockSize={blockSize}
               cropSize={cropSize}
               handleSubmit={blob => console.log(blob)}
