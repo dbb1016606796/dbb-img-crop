@@ -39,7 +39,7 @@ class App extends Component {
             <ReactCrop
               //locked={true}
               //ruleOfThirds={true}
-              wrapStyle={{ width: '50%', maxLength: '70%' }}
+              wrapStyle={{ width: '80%', maxLength: '70%' }}
               file={src}
               rotate={true}
               // blockSize={blockSize}

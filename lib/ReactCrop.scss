@@ -1,5 +1,25 @@
 @import '../node_modules/react-image-crop/lib/ReactCrop';
 $top: 20px;
+$theme: #40a9ff;
+
+* {
+  box-sizing: border-box;
+}
+ul,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+button {
+  line-height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 1px solid transparent;
+  outline: none;
+}
 
 .crop-img-box {
   position: fixed;
@@ -9,9 +29,64 @@ $top: 20px;
   height: 100%;
   background: rgba(0, 0, 0, 0.2);
   z-index: 10;
+
+  .watermark {
+    position: relative;
+    width: 200px;
+    z-index: 20;
+    text-align: center;
+    background: #fff;
+    left: 10px;
+    top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    #dragTitle {
+      padding: 10px 0;
+      background: $theme;
+      color: #fff;
+      &:hover {
+        cursor: move;
+      }
+    }
+    li {
+      padding: 5px 10px;
+    }
+    .label-text {
+      font-size: 14px;
+      color: #333;
+    }
+    //上传文件
+    .uploadFile-box {
+      .inputfile {
+        display: none;
+      }
+      label {
+        display: block;
+        padding: 10px;
+        background: #7f5f07;
+        width: 60%;
+        margin: 0 auto;
+        border-radius: 10px;
+        color: #fff;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    button {
+      background: #125dc6;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
   .wrap {
     text-align: center;
-    position: relative;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -54,16 +129,14 @@ $top: 20px;
       }
     }
   }
-  .dbb-left,.dbb-right{
+  .dbb-left,
+  .dbb-right {
     display: inline-block;
     vertical-align: middle;
-  } 
-  .dbb-left{
+  }
+  .dbb-left {
     max-width: 80%;
     margin-right: 20px;
-    img {
-      //max-height: 800px;
-    }
   }
 
   h1 {
@@ -74,14 +147,50 @@ $top: 20px;
     margin-bottom: 5px;
   }
 
-  .footer-box {
-    button {
-      line-height: 100%;
-      margin: 0;
-      padding: 0;
-      border: 1px solid transparent;
-      outline: none;
+  .switch {
+    margin-left: 15px;
+    label {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+      background-color: red;
+      border-color: red;
+      border-radius: 10px;
+      vertical-align: middle;
     }
+    label::before {
+      content: ' ';
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      position: absolute;
+      right: 22px;
+      top: 2px;
+      background-color: #fff;
+      transition: all 0.4s ease;
+      cursor: pointer;
+    }
+    input {
+      display: none;
+    }
+    input:checked + label {
+      background-color: rgb(19, 206, 102);
+      border-color: rgb(19, 206, 102);
+    }
+    input:checked + label::before {
+      right: 2px;
+    }
+    > span {
+      display: inline-block;
+      margin-left: 5px;
+      vertical-align: middle;
+      color: #333;
+    }
+  }
+
+  .footer-box {
     .btn {
       margin-left: 20px;
       .dbb-ok,
@@ -94,7 +203,7 @@ $top: 20px;
         }
       }
       .dbb-ok {
-        background: #40a9ff;
+        background: $theme;
         margin-right: 10px;
       }
       .dbb-cancel {
