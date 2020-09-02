@@ -1,8 +1,8 @@
 {
   "name": "dbb-img-crop",
-  "version": "1.0.1",
-  "description": "一个react的弹框式图片裁剪插件,支持预览",
-  "repository": "",
+  "version": "1.1.0",
+  "description": "一个react的弹框式图片裁剪插件,支持预览，旋转",
+  "repository": "https://github.com/dbb1016606796/dbb-img-crop",
   "main": "dist/ReactCrop.min.js",
   "browserslist": [
     "defaults",

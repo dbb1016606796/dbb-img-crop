@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom'; // eslint-disable-line
 import ReactCrop from '../lib/ReactCrop';
-//import '../dist/ReactCrop.css';
+
 
 const cropEditor = document.querySelector('#crop-editor');
 
@@ -11,8 +11,8 @@ const blockSize = {
   height: 590,
 };
 const cropSize = {
-  width: 460,
-  height: 590,
+  width: 800,
+  height: 600,
 };
 
 class App extends Component {
@@ -41,12 +41,16 @@ class App extends Component {
               //locked={true}
               //ruleOfThirds={true}
               file={src}
-              wrapStyle={{
-                width:'1400px'
+              rotate={true}
+              // blockSize={blockSize}
+              // cropSize={cropSize}
+              handleSubmit={blob => {
+                const src = URL.createObjectURL(blob.file),
+                  img = document.createElement('img');
+                img.src = src;
+                document.body.appendChild(img);
+                this.setState({ src: null });
               }}
-              blockSize={blockSize}
-              cropSize={cropSize}
-              handleSubmit={blob => console.log(blob)}
               close={() => this.setState({ src: null })}
             />
           </>

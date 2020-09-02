@@ -19,7 +19,7 @@ $top: 20px;
     background: #f1f1f1;
     border-radius: 10px;
     overflow: hidden;
-    width: 70%;
+    max-width: 80%;
     height: 800px;
     overflow-y: auto;
     &::-webkit-scrollbar {
@@ -54,19 +54,18 @@ $top: 20px;
       }
     }
   }
-  .dbb-left {
-    position: absolute;
-    left: $top;
-    top: 70px;
+  .dbb-left,.dbb-right{
+    display: inline-block;
+    vertical-align: middle;
+  } 
+  .dbb-left{
+    max-width: 80%;
+    margin-right: 20px;
     img {
-      max-height: 800px;
+      //max-height: 800px;
     }
   }
-  .dbb-right {
-    position: absolute;
-    right: $top;
-    bottom: $top;
-  }
+
   h1 {
     font-size: 16px;
     margin: 0;
