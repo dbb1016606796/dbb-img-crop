@@ -1,4 +1,4 @@
-###### 一款基于[react-image-crop](https://github.com/DominicTobias/react-image-crop)二次开发的，弹出层,图片裁剪插件(添加了预览)
+###### 一款基于[react-image-crop](https://github.com/DominicTobias/react-image-crop)二次开发的，图片裁剪工具
 
 ```javascript
 npm install dbb-img-crop --save
@@ -8,7 +8,7 @@ npm install dbb-img-crop --save
 
 ######  效果预览
 <div>
-<img src="http://yjw-image.oss-cn-shenzhen.aliyuncs.com/npm/demo.png" />
+<img src="http://yjw-image.oss-cn-shenzhen.aliyuncs.com/npm/demo.gif" />
 
 ###### 使用示例
 
@@ -81,12 +81,20 @@ class App extends Component {
 | blockSize:{width:number\|222,height:number\|296}  | 裁剪图片的框框尺寸                               |
 | cropSize:{width:number\|111,height:number \| 148} | 裁剪之后的照片回显尺寸                           |
 | rotate:boolean                                    | 是否开启旋转                                     |
+| wrapStyle:object                                  | 最外层容器的样式                                 |
+| leftStyle:object                                  | 左边容器的样式                                   |
 
 [^{...props}]: 支持所有react-image-crop的参数
 
 
 
 ##### 更新日志
+
+###### 1.1.1
+
+1. 新增wrapStyle属性。
+2. 新增leftStyle属性。
+3. 新增git图演示
 
 ###### 1.1.0
 

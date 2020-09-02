@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom'; // eslint-disable-line
 import ReactCrop from '../lib/ReactCrop';
 
-
 const cropEditor = document.querySelector('#crop-editor');
 
 const blockSize = {
@@ -40,6 +39,7 @@ class App extends Component {
             <ReactCrop
               //locked={true}
               //ruleOfThirds={true}
+              wrapStyle={{ width: '50%', maxLength: '70%' }}
               file={src}
               rotate={true}
               // blockSize={blockSize}
