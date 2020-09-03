@@ -37,19 +37,18 @@ class App extends Component {
         {src && (
           <>
             <ReactCrop
-              //locked={true}
-              //ruleOfThirds={true}
-              wrapStyle={{ width: '80%', maxLength: '70%' }}
+              //locked={true}  //true == 裁剪框不可以自定义尺寸
+              //ruleOfThirds={true} //true == 开启裁剪框九宫格
+               wrapStyle={{ width: '80%', height: '900px' }}
+              cropSize={{ width: '880px', height: '660px' }}
+              blockSize={{ width: 880, height: 660 }}
+              defaultWatermarkSize={[100, 100]}
+              scrollBar={true}
               file={src}
               rotate={true}
-              // blockSize={blockSize}
-              // cropSize={cropSize}
+              watermark={true}
               handleSubmit={blob => {
-                const src = URL.createObjectURL(blob.file),
-                  img = document.createElement('img');
-                img.src = src;
-                document.body.appendChild(img);
-                this.setState({ src: null });
+                console.log(blob);
               }}
               close={() => this.setState({ src: null })}
             />
