@@ -60,12 +60,8 @@ class App extends Component {
         {src && (
           <>
             <ReactCrop
-<<<<<<< HEAD
-              //{...props}
-=======
               //locked={true}  true == 裁剪框不可以自定义尺寸
               //ruleOfThirds={true} true == 开启裁剪框九宫格
->>>>>>> 1.2.0
               file={src}
               handleSubmit={blob => {
                 //设置照片回显
@@ -111,16 +107,13 @@ class App extends Component {
 
 ##### 更新日志
 
-<<<<<<< HEAD
-###### 1.1.2 & 1.1.3
+###### 1.2.1
 
-1. 修改.gitignore，不再上传测试文件生成的js文件(可以运行npm run start来生成)
-2. 就这样，目前功能暂时满足了我的需求，后期可能会新增 添加水印的功能。
-=======
+1. md说明的冲突忘记解决了，解决下。
+
 ###### 1.2.0
 
 1. 新增添加水印功能。
->>>>>>> 1.2.0
 
 ###### 1.1.1
 
