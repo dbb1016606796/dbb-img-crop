@@ -14,8 +14,8 @@ npm install dbb-img-crop --save
 
 ```javascript
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom'; // eslint-disable-line
-import ReactCrop from '../lib/ReactCrop';
+import ReactDOM from 'react-dom'; 
+import ReactCrop from 'dbb-img-crop';
 
 const blockSize = {
   width: 460,
@@ -40,6 +40,7 @@ class App extends Component {
 	handleSubmit = ({file,event}) => {
     // 会返回一个对象,file参数就是一个Blob对象
    // 如果你使用antd的插件，传进来的File对象有name和uid字段,返回的Blob对象都会有这两个key-	value 
+   //如果还需要回显，可以 img.src = new Blob(file)     
     conosle.log(file);  
   	};
 
@@ -56,8 +57,6 @@ class App extends Component {
           <>
             <ReactCrop
               //{...props}
-              //locked={true} 开启九宫格裁剪框
-              //ruleOfThirds={true} 允许自定义裁剪框
               file={src}
               // blockSize={blockSize}
               // cropSize={cropSize}
@@ -90,6 +89,11 @@ class App extends Component {
 
 ##### 更新日志
 
+###### 1.1.2 & 1.1.3
+
+1. 修改.gitignore，不再上传测试文件生成的js文件(可以运行npm run start来生成)
+2. 就这样，目前功能暂时满足了我的需求，后期可能会新增 添加水印的功能。
+
 ###### 1.1.1
 
 1. 新增wrapStyle属性。
@@ -100,6 +104,7 @@ class App extends Component {
 
 1. 新增旋转功能
 2. 布局方式变动，如果裁剪框+预览 不大于当前屏幕宽度的80%，将会水平剧中对齐显示
+3. css文件最终将会打包进js文件，不再单独打包成js和css文件
 
 ###### 1.0.3
 
